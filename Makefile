@@ -1,18 +1,21 @@
-SRC=main.c 
+SRCFILES=main.c utils.c option.c init.c packet.c
 
-OBJSRC=$(SRC:.c=.o)
+OBJSRC=$(SRCFILES:.c=.o)
 OBJDIR=obj
 
+SRCDIR=src
+SRC=$(addprefix $(SRCDIR)/, $(SRCFILES))
 OBJ=$(addprefix $(OBJDIR)/, $(OBJSRC))
+
 NAME=ft_traceroute
-FLAG=-Wall -Wextra -Wunused -g
+FLAG=-Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	cc $(FLAG) -lm $(OBJ) -o $(NAME)
 
-$(OBJDIR)/%.o: %.c
+$(OBJDIR)/%.o: src/%.c
 	mkdir -p obj
 	cc $(FLAG) -c $< -o $@
 
