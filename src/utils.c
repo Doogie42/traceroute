@@ -16,13 +16,12 @@ uint16_t reverse_endian(uint16_t src)
 	return rev;
 }
 
-
 double get_time_diff_ms(ft_time start, ft_time end)
 {
-	long diff_s = end.tv_sec -  start.tv_sec; 
-	long diff_us = end.tv_usec -  start.tv_usec; 
+	long diff_s = end.tv_sec - start.tv_sec;
+	long diff_us = end.tv_usec - start.tv_usec;
 
-	return ((double)diff_s * 1000.0 + (double) diff_us / 1000.0);
+	return ((double)diff_s * 1000.0 + (double)diff_us / 1000.0);
 }
 
 void ft_close(int fd)
