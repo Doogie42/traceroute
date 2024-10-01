@@ -33,11 +33,3 @@ git clone https://github.com/Doogie42/ft_traceroute.git
 cd ft_traceroute
 make
 ```
-
-## Run
-
-To run the ft_traceroute program, use the following command:
-
-```
-./ft_traceroute [options] <destination>
-```
